@@ -1,0 +1,207 @@
+<!-- ========== GOOGLE FONTS - BALOO ========== -->
+<div style="position: relative; width: 100%; height: 0; padding-top: 393.5578%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https://www.canva.com/design/DAG56oQXObM/ccUw2e1x3cV9jV8PMTkvaw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+
+<!-- ========== COUNTDOWN REALTIME ========== -->
+<div id="countdown-wrapper" style="
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Baloo 2', sans-serif;
+    position: absolute;
+">
+  <div class="time-box">
+    <span id="days">0</span>
+    <label>NGÀY</label>
+  </div>
+  <div class="time-box">
+    <span id="hours">0</span>
+    <label>GIỜ</label>
+  </div>
+  <div class="time-box">
+    <span id="minutes">0</span>
+    <label>PHÚT</label>
+  </div>
+  <div class="time-box">
+    <span id="seconds">0</span>
+    <label>GIÂY</label>
+  </div>
+</div>
+
+<style>
+  /* ========== MOBILE STYLES (Default) ========== */
+  #countdown-wrapper {
+    gap: 8px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  #countdown-wrapper .time-box {
+    background-image: url('images/decor-countdown.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    padding: 8px;
+  }
+
+  #countdown-wrapper .time-box span {
+    display: block;
+    font-weight: bold;
+    color: #f5f5f0;
+    text-shadow: 0 0 10px rgba(245, 245, 240, 0.8), 0 0 20px rgba(245, 245, 240, 0.5);
+    position: relative;
+    z-index: 2;
+    line-height: 1;
+    font-size: 24px;
+  }
+
+  #countdown-wrapper .time-box label {
+    display: block;
+    margin-top: 2px;
+    color: #f5f5f0;
+    opacity: 1;
+    position: relative;
+    z-index: 2;
+    font-size: 8px;
+  }
+
+  /* Small mobile screens (sm) */
+  @media (min-width: 640px) {
+    #countdown-wrapper {
+      gap: 16px;
+      top: 25%;
+      transform: translate(-50%, -50%);
+      padding: 0 24px;
+    }
+    #countdown-wrapper .time-box {
+      width: 80px;
+      height: 80px;
+      padding: 12px;
+    }
+    #countdown-wrapper .time-box span {
+      font-size: 36px;
+    }
+    #countdown-wrapper .time-box label {
+      font-size: 12px;
+      margin-top: 3px;
+    }
+  }
+
+  /* Medium mobile/tablet screens (md) */
+  @media (min-width: 768px) {
+    #countdown-wrapper {
+      gap: 24px;
+      top: 25%;
+      transform: translate(-50%, -50%);
+      padding: 0 32px;
+    }
+    #countdown-wrapper .time-box {
+      width: 90px;
+      height: 90px;
+      padding: 16px;
+    }
+    #countdown-wrapper .time-box span {
+      font-size: 56px;
+    }
+    #countdown-wrapper .time-box label {
+      font-size: 18px;
+      margin-top: 4px;
+    }
+  }
+
+  /* ========== PC/DESKTOP STYLES ========== */
+  @media (min-width: 1024px) {
+    #countdown-wrapper {
+      gap: 32px;
+      top: 35%;
+      transform: translate(-50%, -50%);
+      width: auto;
+      padding: 0;
+    }
+    #countdown-wrapper .time-box {
+      width: 120px;
+      height: 120px;
+      padding: 18px 24px;
+    }
+    #countdown-wrapper .time-box span {
+      font-size: 60px;
+    }
+    #countdown-wrapper .time-box label {
+      font-size: 20px;
+      margin-top: 5px;
+    }
+  }
+
+  /* Large desktop screens (xl) */
+  @media (min-width: 1280px) {
+    #countdown-wrapper {
+      gap: 40px;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: auto;
+      padding: 0;
+    }
+    #countdown-wrapper .time-box {
+      width: 200px;
+      height: 200px;
+      padding: 20px 30px;
+    }
+    #countdown-wrapper .time-box span {
+      font-size: 100px;
+    }
+    #countdown-wrapper .time-box label {
+      font-size: 35px;
+      margin-top: 6px;
+    }
+  }
+</style>
+
+<script>
+  // 👉 CHỈNH THỜI GIAN KẾT THÚC TẠI ĐÂY
+  const endDate = new Date("2025-12-30T23:59:59").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = endDate - now;
+
+    if (distance < 0) {
+      document.getElementById("countdown-wrapper").innerHTML = "<h2>Sự kiện đã kết thúc!</h2>";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
