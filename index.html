@@ -1,207 +1,273 @@
-<!-- ========== GOOGLE FONTS - BALOO ========== -->
-<div style="position: relative; width: 100%; height: 0; padding-top: 393.5578%;
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>workshop</title>
+    <link href="https://fonts.cdnfonts.com/css/baloo" rel="stylesheet">
+                
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <!-- HEADER -->
+ <header class='font-baloo'>
+    <nav>
+        <a class="active">Trang chủ</a>
+        <a href="#about-us">Về chúng tôi</a>
+        <a href="#registration">Đăng ký</a>
+    </nav>
+    <div class="title font-baloo">BOOTCAMP</div>
+
+    <div class="logo">
+        <img src="./images/logo-clb.png" alt="logo">
+    </div>
+</header>
+
+
+<!-- COUNTDOWN -->
+ <div class="count-boxes">
+    <div class="countdown">
+        <div class="box">
+            <div class="number" id="days">00</div>
+            <div class="label">NGÀY</div>
+        </div>
+    
+        <div class="box">
+            <div class="number" id="hours">00</div>
+            <div class="label">GIỜ</div>
+        </div>
+    
+        <div class="box">
+            <div class="number" id="minutes">00</div>
+            <div class="label">PHÚT</div>
+        </div>
+    
+        <div class="box">
+            <div class="number" id="seconds">00</div>
+            <div class="label">GIÂY</div>
+            <div class="decor"> <img src="./images/elements.png" alt="elements">
+             </div>
+        </div>
+    </div>
+ </div>
+
+
+<!-- DECOR -->
+<!-- <div class="decor-bottom">
+    <img src="./images/removed-bg-hero-banner.png" alt="christmas"/>
+</div> -->
+
+<!-- COUNTDOWN SCRIPT -->
+<script>
+    function countdown() {
+        const eventDate = new Date("2025-12-25T00:00:00").getTime();
+
+        setInterval(function () {
+            const now = new Date().getTime();
+            const diff = eventDate - now;
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = d;
+            document.getElementById("hours").textContent = h;
+            document.getElementById("minutes").textContent = m;
+            document.getElementById("seconds").textContent = s;
+        }, 1000);
+    }
+
+    countdown();
+</script>
+
+
+<!-- ================== SECTION 1: INTRO CONTENT ================== -->
+<div id="about-us" style="position: relative; width: 100%; height: 0; padding-top: 281.1127%;
  padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
  border-radius: 8px; will-change: transform;">
   <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https://www.canva.com/design/DAG56oQXObM/ccUw2e1x3cV9jV8PMTkvaw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+    src="https://www.canva.com/design/DAG5_6XSqlM/VWC56tf1Qben4v93rWrg8w/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
   </iframe>
 </div>
 
-<!-- ========== COUNTDOWN REALTIME ========== -->
-<div id="countdown-wrapper" style="
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Baloo 2', sans-serif;
-    position: absolute;
-">
-  <div class="time-box">
-    <span id="days">0</span>
-    <label>NGÀY</label>
-  </div>
-  <div class="time-box">
-    <span id="hours">0</span>
-    <label>GIỜ</label>
-  </div>
-  <div class="time-box">
-    <span id="minutes">0</span>
-    <label>PHÚT</label>
-  </div>
-  <div class="time-box">
-    <span id="seconds">0</span>
-    <label>GIÂY</label>
-  </div>
+
+<!-- REGISTRATION-->
+<!-- Main Container -->
+<div id="registration" class="registration-page">
+     
+<!-- Main Content (Two Columns) -->
+<div class="main-content">
+    
+    <!-- Left Section: Event Info & Date Selection -->
+    <div class="event-info-section">
+        <div class="title-group">
+            <h1 class="title-main">
+                ĐĂNG KÝ THAM GIA
+            </h1>
+            <h2 class="title-glow">
+                CHUYỆN MÀU
+            </h2>
+            <h2 class="title-glow">
+                CHUYỆN MÌNH
+                <span class="bell-icon">🔔</span>
+            </h2>
+        </div>
+
+        <form id="registrationForm">
+            <h3 class="date-selection-title">CHỌN NGÀY THAM GIA</h3>
+            
+            <div class="date-options">
+                <!-- Date Option 1 (Default checked) -->
+                <label class="date-option checked">
+                    <input type="radio" name="event_date" value="07/12" checked>
+                    <span class="checkmark"></span>
+                    Chủ nhật 07/12: 18h-20h
+                </label>
+                
+                <!-- Date Option 2 -->
+                <label class="date-option">
+                    <input type="radio" name="event_date" value="21/12">
+                    <span class="checkmark"></span>
+                    Chủ nhật 21/12: 18h-20h
+                </label>
+            </div>
+
+            <div class="fee-info">
+                <p>
+                    <strong>Phí tham dự: 100.000đ</strong>
+                    <br>
+                    (Đã bao gồm toàn bộ dụng cụ vẽ + nước uống. 
+                    Sự kiện phi lợi nhuận, ưu tiên những bạn thật 
+                    sự muốn dành thời gian cho bản thân)
+                </p>
+            </div>
+        <!-- Form continues on the right, but the date selection is part of the form data -->
+    </div>
+
+    <!-- Right Section: Contact Form -->
+    <div class="contact-form-section">
+        
+        <!-- Input Fields -->
+        <div class="input-group">
+            <input type="text" id="hoTen" name="fullname" placeholder=" " required>
+            <label for="hoTen">HỌ TÊN CỦA BẠN</label>
+        </div>
+
+        <div class="input-group">
+            <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="dob" name="dob" placeholder=" " required>
+            <label for="dob">NGÀY THÁNG NĂM SINH</label>
+        </div>
+
+        <div class="input-group">
+            <input type="tel" id="phone" name="phone" placeholder=" " required>
+            <label for="phone">SỐ ĐIỆN THOẠI</label>
+        </div>
+
+        <div class="input-group">
+            <input type="email" id="email" name="email" placeholder=" " required>
+            <label for="email">MAIL LIÊN HỆ</label>
+        </div>
+
+        <div class="input-group">
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected hidden></option>
+                <option value="Sinh viên">Nam</option>
+                <option value="Người đi làm">Nữ</option>
+                <option value="Khác">LGBT</option>
+            </select>
+            <label for="gender">BẠN LÀ:</label>
+        </div>
+
+        <div class="input-group">
+            <textarea id="message" name="message" rows="3" placeholder=" "></textarea>
+            <label for="message">LỜI NHẮN CHO NGHỆ</label>
+        </div>
+
+        <!-- Submit Button -->
+        <input 
+        type="image" 
+        id="submitButton" class="submit-button"
+        src="./images/btn-register.png" 
+        alt="Submit" 
+        style="width: 100%; border:none;"
+      >
+        <!-- Feedback message area -->
+        <p id="form-message" style="text-align: center; margin-top: 15px; color: white;"></p>
+
+    </div>
+    </form>
+</div>
 </div>
 
-<style>
-  /* ========== MOBILE STYLES (Default) ========== */
-  #countdown-wrapper {
-    gap: 8px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    padding: 0 16px;
-    box-sizing: border-box;
-  }
-
-  #countdown-wrapper .time-box {
-    background-image: url('images/decor-countdown.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #fff;
-    border-radius: 20px;
-    text-align: center;
-    font-weight: bold;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    padding: 8px;
-  }
-
-  #countdown-wrapper .time-box span {
-    display: block;
-    font-weight: bold;
-    color: #f5f5f0;
-    text-shadow: 0 0 10px rgba(245, 245, 240, 0.8), 0 0 20px rgba(245, 245, 240, 0.5);
-    position: relative;
-    z-index: 2;
-    line-height: 1;
-    font-size: 24px;
-  }
-
-  #countdown-wrapper .time-box label {
-    display: block;
-    margin-top: 2px;
-    color: #f5f5f0;
-    opacity: 1;
-    position: relative;
-    z-index: 2;
-    font-size: 8px;
-  }
-
-  /* Small mobile screens (sm) */
-  @media (min-width: 640px) {
-    #countdown-wrapper {
-      gap: 16px;
-      top: 25%;
-      transform: translate(-50%, -50%);
-      padding: 0 24px;
-    }
-    #countdown-wrapper .time-box {
-      width: 80px;
-      height: 80px;
-      padding: 12px;
-    }
-    #countdown-wrapper .time-box span {
-      font-size: 36px;
-    }
-    #countdown-wrapper .time-box label {
-      font-size: 12px;
-      margin-top: 3px;
-    }
-  }
-
-  /* Medium mobile/tablet screens (md) */
-  @media (min-width: 768px) {
-    #countdown-wrapper {
-      gap: 24px;
-      top: 0;
-      transform: translate(-50%, 160%);
-      padding: 0 32px;
-    }
-    #countdown-wrapper .time-box {
-      width: 90px;
-      height: 90px;
-      padding: 16px;
-    }
-    #countdown-wrapper .time-box span {
-      font-size: 56px;
-    }
-    #countdown-wrapper .time-box label {
-      font-size: 18px;
-      margin-top: 4px;
-    }
-  }
-
-  /* ========== PC/DESKTOP STYLES ========== */
-  @media (min-width: 1024px) {
-    #countdown-wrapper {
-      gap: 32px;
-      top: 35%;
-      transform: translate(-50%, -50%);
-      width: auto;
-      padding: 0;
-    }
-    #countdown-wrapper .time-box {
-      width: 120px;
-      height: 120px;
-      padding: 18px 24px;
-    }
-    #countdown-wrapper .time-box span {
-      font-size: 60px;
-    }
-    #countdown-wrapper .time-box label {
-      font-size: 20px;
-      margin-top: 5px;
-    }
-  }
-
-  /* Large desktop screens (xl) */
-  @media (min-width: 1280px) {
-    #countdown-wrapper {
-      gap: 40px;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: auto;
-      padding: 0;
-    }
-    #countdown-wrapper .time-box {
-      width: 200px;
-      height: 200px;
-      padding: 20px 30px;
-    }
-    #countdown-wrapper .time-box span {
-      font-size: 100px;
-    }
-    #countdown-wrapper .time-box label {
-      font-size: 35px;
-      margin-top: 6px;
-    }
-  }
-</style>
-
 <script>
-  // 👉 CHỈNH THỜI GIAN KẾT THÚC TẠI ĐÂY
-  const endDate = new Date("2025-12-21T23:59:59").getTime();
+document.addEventListener('DOMContentLoaded', () => {
+const form = document.getElementById('registrationForm');
+const formMessage = document.getElementById('form-message');
+const dateOptions = document.querySelectorAll('.date-option');
 
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = endDate - now;
+// --- Date Selection Visual Toggle ---
+dateOptions.forEach(option => {
+    option.addEventListener('click', () => {
+        // Remove 'checked' class from all
+        dateOptions.forEach(opt => opt.classList.remove('checked'));
+        // Add 'checked' class to the clicked one
+        option.classList.add('checked');
+        // Ensure the hidden radio button is actually checked
+        option.querySelector('input[type="radio"]').checked = true;
+    });
+});
 
-    if (distance < 0) {
-      document.getElementById("countdown-wrapper").innerHTML = "<h2>Sự kiện đã kết thúc!</h2>";
-      return;
+// --- Google Sheets Submission Logic ---
+
+// **IMPORTANT:** Replace this URL with your deployed Google Apps Script Web App URL.
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbyUpwjLlbAv7-jkSrXcjjLTUskRzCCBTGvVYBG3gMzekWN1tXOSLjvvsZqcol1Bqgaf/exec';
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    formMessage.textContent = 'Đang đăng ký...'; 
+    formMessage.style.color = 'yellow';
+    
+    // Disable button to prevent multiple submissions
+    const btn = document.getElementById("submitButton");
+    if (btn) btn.disabled = true;
+    // Gather form data
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => (data[key] = value));
+
+    try {
+        const response = await fetch(GOOGLE_SHEET_URL, {
+            method: 'POST',
+            // Google Apps Script expects data in URLSearchParams format for POST
+            body: new URLSearchParams(data), 
+        });
+
+         // ... inside the try block
+        if (response.ok) {
+            // Check for a specific 'success' response from the script if configured
+            const result = await response.json(); 
+            if (result.result === 'success') {
+                // *** MODIFICATION HERE ***
+                window.location.href = 'thankyou.html'; // Redirect to the thank you page
+                // *** END MODIFICATION ***
+            } else {
+                throw new Error('Script returned an error.');
+            }
+        // ...
+        } else {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    } catch (error) {
+        console.error('Submission Error:', error);
+        formMessage.textContent = 'Đăng ký thất bại. Vui lòng thử lại sau.';
+        formMessage.style.color = '#FF4500'; // Red
+    } finally {
+        submitButton.disabled = false;
     }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
-  }
-
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
+});
+});
 </script>
+</body>
+</html>
