@@ -62,7 +62,7 @@
 <!-- COUNTDOWN SCRIPT -->
 <script>
     function countdown() {
-        const eventDate = new Date("2025-12-25T00:00:00").getTime();
+        const eventDate = new Date("2025-12-07T00:00:00").getTime();
 
         setInterval(function () {
             const now = new Date().getTime();
@@ -266,6 +266,16 @@ form.addEventListener('submit', async (e) => {
     } finally {
         submitButton.disabled = false;
     }
+});
+
+// active effect for header menu
+const menuItems = document.querySelectorAll('nav a');
+
+menuItems.forEach(item => {
+  item.addEventListener('click', () => {
+    document.querySelector('nav a.active')?.classList.remove('active');
+    item.classList.add('active');
+  });
 });
 });
 </script>
