@@ -1,0 +1,259 @@
+/* ========== GOOGLE FONTS - BALOO ========== */
+.iframe-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 393.5578%;
+  padding-bottom: 0;
+  box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16);
+  margin-top: 1.6em;
+  margin-bottom: 0.9em;
+  overflow: hidden;
+  border-radius: 8px;
+  will-change: transform;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.register-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translate(-172%, -119%);
+  max-width: 23%;
+  width: auto;
+  height: auto;
+  max-height: 15%;
+  z-index: 10;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: auto;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.register-btn img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.register-btn:hover {
+  transform: translate(-172%, -119%) scale(1.05);
+}
+
+.register-btn:active {
+  transform: translate(-172%, -119%) scale(0.98);
+}
+
+/* Extra small mobile screens */
+@media (max-width: 375px) {
+  .register-btn {
+    bottom: 9px;
+    transform: translate(-172%, -119%);
+    max-width: 23%;
+  }
+}
+
+/* Small mobile screens (sm) */
+@media (min-width: 640px) {
+  .register-btn {
+    max-width: 23%;
+    max-height: 12%;
+  }
+}
+
+/* Medium mobile/tablet screens (md) */
+@media (min-width: 768px) {
+  .register-btn {
+    bottom: 22px;
+    max-width: 23%;
+    max-height: 10%;
+  }
+}
+
+/* ========== PC/DESKTOP STYLES ========== */
+@media (min-width: 1024px) {
+  .register-btn {
+    bottom: 30px;
+    max-width: 23%;
+    max-height: 8%;
+  }
+}
+
+/* Large desktop screens (xl) */
+@media (min-width: 1280px) {
+  .register-btn {
+    bottom: 40px;
+    max-width: 23%;
+    max-height: 7%;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1536px) {
+  .register-btn {
+    bottom: 47px;
+    max-width: 23%;
+    max-height: 6%;
+  }
+}
+
+/* ========== COUNTDOWN REALTIME ========== */
+#countdown-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Baloo 2', sans-serif;
+  position: absolute;
+  gap: 8px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+#countdown-wrapper .time-box {
+  background-image: url('images/decor-countdown.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  padding: 8px;
+}
+
+#countdown-wrapper .time-box span {
+  display: block;
+  font-weight: bold;
+  color: #f5f5f0;
+  text-shadow: 0 0 10px rgba(245, 245, 240, 0.8), 0 0 20px rgba(245, 245, 240, 0.5);
+  position: relative;
+  z-index: 2;
+  line-height: 1;
+  font-size: 24px;
+}
+
+#countdown-wrapper .time-box label {
+  display: block;
+  margin-top: 2px;
+  color: #f5f5f0;
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+  font-size: 8px;
+}
+
+/* Small mobile screens (sm) */
+@media (min-width: 640px) {
+  #countdown-wrapper {
+    gap: 16px;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    padding: 0 24px;
+  }
+  #countdown-wrapper .time-box {
+    width: 80px;
+    height: 80px;
+    padding: 12px;
+  }
+  #countdown-wrapper .time-box span {
+    font-size: 36px;
+  }
+  #countdown-wrapper .time-box label {
+    font-size: 12px;
+    margin-top: 3px;
+  }
+}
+
+/* Medium mobile/tablet screens (md) */
+@media (min-width: 768px) {
+  #countdown-wrapper {
+    gap: 24px;
+    top: 0;
+    transform: translate(-50%, 160%);
+    padding: 0 32px;
+  }
+  #countdown-wrapper .time-box {
+    width: 90px;
+    height: 90px;
+    padding: 16px;
+  }
+  #countdown-wrapper .time-box span {
+    font-size: 56px;
+  }
+  #countdown-wrapper .time-box label {
+    font-size: 18px;
+    margin-top: 4px;
+  }
+}
+
+/* ========== PC/DESKTOP STYLES ========== */
+@media (min-width: 1024px) {
+  #countdown-wrapper {
+    gap: 32px;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    padding: 0;
+  }
+  #countdown-wrapper .time-box {
+    width: 120px;
+    height: 120px;
+    padding: 18px 24px;
+  }
+  #countdown-wrapper .time-box span {
+    font-size: 60px;
+  }
+  #countdown-wrapper .time-box label {
+    font-size: 20px;
+    margin-top: 5px;
+  }
+}
+
+/* Large desktop screens (xl) */
+@media (min-width: 1280px) {
+  #countdown-wrapper {
+    gap: 40px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    padding: 0;
+  }
+  #countdown-wrapper .time-box {
+    width: 200px;
+    height: 200px;
+    padding: 20px 30px;
+  }
+  #countdown-wrapper .time-box span {
+    font-size: 100px;
+  }
+  #countdown-wrapper .time-box label {
+    font-size: 35px;
+    margin-top: 6px;
+  }
+}
+
